@@ -26,3 +26,6 @@ body{
 
 }
 
+.navegacion-principal {
+    background-color: var(--Secundario);
+}
