@@ -1,3 +1,13 @@
+/*Custom properties*/
+
+:root  {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --Primario: #ffc107;
+    --Secundario: #0097a7;
+    --gris: #757575;
+}
+
 html {
     font-size: 62.5%
 }
