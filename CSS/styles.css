@@ -1,31 +1,80 @@
-/*Custom properties*/
 
-:root {
+:root{
     --blanco: #ffffff;
     --oscuro: #212121;
-    --Primario: #ffc107;
-    --Secundario: #0097a7;
+    --primario: #ffc107;
+    --secundario:#c9a438;
     --gris: #757575;
+    --glassGris: #66dcd2a6;
+
+
+}
+html 
+{
+font-size: 62.5%px;
 }
 
-html {
-    font-size: 62.5%
-}
+html 
+{
+font-size: 62.5%px;
 
+}
 body{
     font-size: 16px;
 }
-
-.titulo{
+.titulo {
     text-align: center;
     font-size: 3.8rem;
+    color: aqua;
+}
+.titulo span{
+
+    font-size: 2rem;
+    color: brown;
+    color: cornflowerblue; 
+
 }
 
 .titulo span{
-    font-size: 2rem;
 
+    color: yellow
 }
 
 .navegacion-principal {
-    background-color: var(--Secundario);
+    padding-bottom: 10rem;
+    background-color: var(--secundario);
+}
+.navegacion-principal {
+    padding: 2rem;
+}
+
+.contenedor{
+    width: 120rem;
+    /*
+    margin: 0 auto 0 auto;
+    margin: 0 auto;
+    
+    */
+    margin: 0 auto;
+
+}
+.nav-bg{
+    background-color: var(--gris);
+}
+
+
+.navegacion-principal a{
+    color: var(--blanco);
+    text-decoration: dashed;
+    background-color: var(--primario);
+    display: block;
+
+}
+
+
+   /*
+clases no llevan . al principio 
+    */
+p{
+    background-color: var(--glassGris);
 }
