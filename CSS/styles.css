@@ -2,11 +2,10 @@
 :root{
     --blanco: #ffffff;
     --oscuro: #212121;
-    --primario: #ffc107;
-    --secundario:#c9a438;
+    --primario: #dd9613;
+    --secundario:#3050db;
     --gris: #757575;
     --glassGris: #66dcd2a6;
-
 
 }
 html 
@@ -22,11 +21,13 @@ font-size: 62.5%px;
 body{
     font-size: 16px;
 }
+
 .titulo {
     text-align: center;
     font-size: 3.8rem;
-    color: aqua;
+    color: black;
 }
+
 .titulo span{
 
     font-size: 2rem;
@@ -37,15 +38,22 @@ body{
 
 .titulo span{
 
-    color: yellow
+    color: green
 }
 
 .navegacion-principal {
     padding-bottom: 10rem;
     background-color: var(--secundario);
 }
+
 .navegacion-principal {
-    padding: 2rem;
+    padding: 1rem;
+    display:flex;
+    /* justify-conten es para filas 
+    align-items es para columnas (flex-direction)*/
+    justify-content: space-between;
+    font-size: 2rem;
+    font-weight: bold; /*negritas*/
 }
 
 .contenedor{
@@ -56,25 +64,30 @@ body{
     
     */
     margin: 0 auto;
-
 }
+
 .nav-bg{
     background-color: var(--gris);
 }
 
-
 .navegacion-principal a{
+    
     color: var(--blanco);
     text-decoration: dashed;
-    background-color: var(--primario);
+    /*background-color: var(--primario);*/
     display: block;
-
 }
 
+.navegacion-principal a:hover{
+    padding: 1rem;
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
 
    /*
 clases no llevan . al principio 
     */
-p{
+
+    p{
     background-color: var(--glassGris);
 }
