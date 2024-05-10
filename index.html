@@ -49,9 +49,9 @@
             </div>
         </section>
 
-        <main class = "contenedor-sombra">
+        <main class = "contenedor sombra">
             <h2> Mis servicios </h2>
-        <div class="servicios">
+            <div class="servicios">
             <section class="servicio">
                 <h3> Diseño web </h3>
                 <div class="iconos">
@@ -65,8 +65,9 @@
                 </div>
                 <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta nostrum fugiat quos sequi quod recusandae, doloribus magni ab veritatis ipsam quo! Inventore saepe omnis tempora harum nostrum cumque quod quis?</p>
             </section> 
+
             <section class="servicio"> 
-                <h3> Aplicaciones web </h3>
+                <h3> Aplicaciones móviles </h3>
                 <div class = "iconos">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-android" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -101,47 +102,46 @@
                 <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta nostrum fugiat quos sequi quod recusandae, doloribus magni ab veritatis ipsam quo! Inventore saepe omnis tempora harum nostrum cumque quod quis?</p>
             </section> 
         </div> <!--servicios-->
-        </main>
+        
+       
 
         <section>
             <h2> Contacto </h2>
 
-            <form>
+            <form class="Formulario">
                 <fieldset>
                     <legend> Contactanos llenando todo los campos </legend>
-                    <div>
-                        <label>Nombre</label>
-                        <input type="text" placeholder="Tu nombre">
-                    </div>
+                    <div class="contenedor-campos">
+                        <div class="campo">
+                            <label>Nombre</label>
+                            <input class="input-text" type="text" placeholder="Tu nombre">
+                        </div>
 
-                    <div>
-                        <label>Teléfono</label>
-                        <input type="tel" placeholder="Tu teléfono">
-                    </div>
+                        <div class="campo">
+                            <label>Teléfono</label>
+                            <input class="input-text" type="tel" placeholder="Tu teléfono">
+                        </div>
 
-                    <div>
-                        <label>Correo</label>
-                        <input type="email" placeholder="Tu email">
+                        <div class="campo">
+                            <label>Correo</label>
+                            <input class="input-text" type="email" placeholder="Tu email">
+                        </div>
+                        
+                        <div class="campo">
+                            <label>Mensaje</label>
+                            <textarea class="input-text"></textarea>
+                        </div>
                     </div>
+                        <div class="alinear-derecha flex">
+                            <input class="boton w-sm-100" type="submit" value="Enviar">
+                        </div>
                     
-                    <div>
-                        <label>Mensaje</label>
-                        <textarea></textarea>
-                    </div>
-
-                    <div>
-                        <input type="submit" value="Enviar">
-                    </div>
-
                 </fieldset>
             </form> 
         </section>
-
-        <footer>
+    </main>
+        <footer class="footer">
             <p> Todos los derechos reservados ©. Alfonso Ávila García</p> 
         </footer>
-        
-
-    
 </body>
 </html>
