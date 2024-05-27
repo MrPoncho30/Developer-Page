@@ -17,6 +17,16 @@
     <link rel="preload" href="css/styles.css" as ="styles">
     <link rel="stylesheet" href="css/styles.css">
     <title>Document Page Alfonso</title>
+    
+    <!---Funciones para llenado de formulario--->
+     <!-- Agregar React y ReactDOM desde CDN -->
+     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+     <!-- Agregar Babel para compilar JSX en el navegador -->
+     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+     <!-- Agregar emailjs-com desde CDN -->
+     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+
 </head>
 <body>
     
@@ -102,48 +112,103 @@
                 <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta nostrum fugiat quos sequi quod recusandae, doloribus magni ab veritatis ipsam quo! Inventore saepe omnis tempora harum nostrum cumque quod quis?</p>
             </section> 
         </div> <!--servicios-->
-        
-       
 
         <section>
-            <h2> Contacto </h2>
+            <h2>Contacto</h2>
 
-            <form id="contactForm" class="Formulario">
-                <fieldset>
-                    <legend> Contactanos llenando todo los campos </legend>
-                    <div class="contenedor-campos">
-                        <div class="campo">
-                            <label>Nombre</label>
-                            <input class="input-text" type="text" name="nombre" placeholder="Tu nombre" required>
-                        </div>
-
-                        <div class="campo">
-                            <label>Teléfono</label>
-                            <input class="input-text" type="tel" name="telefono" placeholder="Tu teléfono" required>
-                        </div>
-
-                        <div class="campo">
-                            <label>Correo</label>
-                            <input class="input-text" type="email" name="correo" placeholder="Tu email" required>
-                        </div>
-                        
-                        <div class="campo">
-                            <label>Mensaje</label>
-                            <textarea class="input-text" name="mensaje" placeholder="Tu mensaje"  required></textarea>
-                        </div>
-                    </div>
-                        <div class="alinear-derecha flex">
-                            <input class="boton w-sm-100" type="submit"  id="submitBtn" value="Enviar" >
-                        </div>
-                    
-                </fieldset>
-            </form> 
-            <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-            <script src="script.js"></script>
+            <div id="contactFormContainer"></div>
         </section>
     </main>
         <footer class="footer">
             <p> Todos los derechos reservados ©. Alfonso Ávila García</p> 
         </footer>
+
+        
+    <script type="text/babel">
+        // Inicializar EmailJS
+        (function() {
+            emailjs.init("KAlzJsaohdcmJqtOc"); // 
+        })();
+
+        class ContactForm extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    nombre: '',
+                    telefono: '',
+                    correo: '',
+                    mensaje: ''
+                };
+
+                this.handleChange = this.handleChange.bind(this);
+                this.handleSubmit = this.handleSubmit.bind(this);
+            }
+
+            handleChange(event) {
+                const name = event.target.name;
+                this.setState({
+                    [name]: event.target.value
+                });
+            }
+
+            handleSubmit(event) {
+                event.preventDefault();
+
+                const serviceID = 'service_0thmp3x'; // 
+                const templateID = 'template_xs2pgzl'; // 
+                emailjs.send(serviceID, templateID, this.state)
+                    .then((response) => {
+                        alert('Mensaje enviado con éxito!', response.status, response.text);
+                    }, (error) => {
+                        alert('Hubo un error al enviar el mensaje:', error);
+                    });
+
+                this.setState({
+                    nombre: '',
+                    telefono: '',
+                    correo: '',
+                    mensaje: ''
+                });
+            }
+
+            render() {
+                return (
+                    <form id="contactForm" className="Formulario" onSubmit={this.handleSubmit}>
+                        <fieldset>
+                            <legend>Contactanos llenando todos los campos</legend>
+                            <div className="contenedor-campos">
+                                <div className="campo">
+                                    <label>Nombre</label>
+                                    <input className="input-text" type="text" name="nombre" placeholder="Tu nombre" value={this.state.nombre} onChange={this.handleChange} required />
+                                </div>
+
+                                <div className="campo">
+                                    <label>Teléfono</label>
+                                    <input className="input-text" type="tel" name="telefono" placeholder="Tu teléfono" value={this.state.telefono} onChange={this.handleChange} required />
+                                </div>
+
+                                <div className="campo">
+                                    <label>Correo</label>
+                                    <input className="input-text" type="email" name="correo" placeholder="Tu email" value={this.state.correo} onChange={this.handleChange} required />
+                                </div>
+
+                                <div className="campo">
+                                    <label>Mensaje</label>
+                                    <textarea className="input-text" name="mensaje" placeholder="Tu mensaje" value={this.state.mensaje} onChange={this.handleChange} required></textarea>
+                                </div>
+                            </div>
+                            <div className="alinear-derecha flex">
+                                <input className="boton w-sm-100" type="submit" id="submitBtn" value="Enviar" />
+                            </div>
+                        </fieldset>
+                    </form>
+                );
+            }
+        }
+
+        ReactDOM.render(<ContactForm />, document.getElementById('contactFormContainer'));
+    </script>
+
+
 </body>
 </html>

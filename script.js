@@ -1,3 +1,4 @@
+/* 
 document.addEventListener('DOMContentLoaded', function() {
     emailjs.init("KAlzJsaohdcmJqtOc"); 
 
@@ -26,3 +27,4 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     });
 });
+*/

@@ -296,3 +296,7 @@
      .footer{
         text-align: center;
      }
+
+     #submitBtn:hover {
+        background-color: #0056b3;
+    }
